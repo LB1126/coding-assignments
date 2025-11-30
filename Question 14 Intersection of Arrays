@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+class Solution {
+    public static int intersectSize(int a[], int b[]) {
+        int counter = 0;
+        ArrayList<Integer> aNums = new ArrayList<>();
+        ArrayList<Integer> bNums = new ArrayList<>();
+        for(int i = 0; i < a.length; i++){
+            aNums.add(a[i]);
+        }for(int i = 0; i < b.length; i++){
+            bNums.add(b[i]);
+        }for(int i = 0; i < aNums.size(); i++){
+            if(bNums.contains(aNums.get(i))){
+                counter++;
+            }
+        }
+        return counter;
+    }
+}
