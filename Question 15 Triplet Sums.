@@ -1,0 +1,20 @@
+class Solution {
+    public boolean hasTripletSum(int arr[], int target) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left < right) {
+            int currentSum = arr[left] + arr[right];
+            for(int i = left + 1; i < right; i++){
+                int ran = arr[i];
+                if (currentSum + ran == target) {
+                    return true;
+                }else if(currentSum + ran < target){
+                    left++;
+                }else{
+                    right--;
+                }
+            }
+        }
+        return false; 
+    }
+}
